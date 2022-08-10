@@ -1,4 +1,4 @@
-import React,{useState, useEffect} from 'react'
+import React,{useState} from 'react'
 
 const HeadAndTail = () => {
 
@@ -10,19 +10,14 @@ const HeadAndTail = () => {
         if(selectedLetter?.value === ""){
             alert("Please select Value from Dropdown")
         }else{
-            console.log("selectedLetter",selectedLetter?.value)
-            console.log("selectedLetter",letters[letters?.length -1 ])
             if(letters[letters?.length -1 ] === selectedLetter?.value){
                 selectedLetterDiv!.lastElementChild.innerHTML += `<span>${selectedLetter?.value}</span>`
             }else{
                 selectedLetterDiv!.innerHTML += `<div><span>${selectedLetter?.value}</span></div>`
             }
             setLetters([...letters,selectedLetter?.value])
-            selectedLetter!.value = ''
-            
+            selectedLetter!.value = '' 
         }
-        
-        
     }
     
   return (
@@ -34,7 +29,6 @@ const HeadAndTail = () => {
         </select><br/>
         <button type="submit" onClick={onSubmit}>Submit</button>
         <div id="selectedLetters">
-            
         </div>
     </div>
   )
